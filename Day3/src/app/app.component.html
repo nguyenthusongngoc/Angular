@@ -23,10 +23,11 @@
       </div>
     </div>
     <div class="btn-list">
-      <button class="btn btn-primary" (click)="setLocal(inputcontent, inputDecription)">Save Local</button>
-      <button class="btn btn-dark" (click)="getLocal()">Get Local</button>
-      <button class="btn btn-warning" (click)="setSession(inputcontent, inputDecription)">Save Session</button>
-      <button class="btn" (click)="getSession()">Get Session</button>
+      <button class="btn btn-primary" (click)="setLocal(inputcontent, inputDecription,'local')">Save Local</button>
+      <button class="btn btn-dark" (click)="getLocal('local')">Get Local</button>
+      <button class="btn btn-warning" (click)="setSession(inputcontent, inputDecription,'session')">Save
+        Session</button>
+      <button class="btn" (click)="getSession('session')">Get Session</button>
     </div>
   </form>
   <div class="result">

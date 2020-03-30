@@ -22,25 +22,25 @@ export class AppComponent {
   ]
   constructor(private localerService: LocalerService) { }
 
-  setLocal(content: string, decription: string) {
+  setLocal(content: string, decription: string, name: string) {
     let newObject = { content: content, decription: decription }
-    this.localerService.saveLocalStorage(newObject);
+    this.localerService.saveLocalStorage(newObject, name);
     this.inputcontent = '';
     this.inputDecription = '';
   }
 
-  getLocal() {
-    this.resultLocal = this.localerService.getLocalStorage();
+  getLocal(name: string) {
+    this.resultLocal = this.localerService.getLocalStorage(name);
   }
 
-  setSession(content: string, decription: string) {
+  setSession(content: string, decription: string, name: string) {
     let newObject = { content: content, decription: decription }
-    this.localerService.saveSessionStorage(newObject);
+    this.localerService.saveSessionStorage(newObject, name);
     this.inputcontent = '';
     this.inputDecription = '';
   }
 
-  getSession() {
-    this.resultSession = this.localerService.getSessionStorage();
+  getSession(name: string) {
+    this.resultSession = this.localerService.getSessionStorage(name);
   }
 }

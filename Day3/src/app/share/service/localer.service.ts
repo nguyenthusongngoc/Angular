@@ -7,19 +7,19 @@ export class LocalerService {
 
 
   constructor() { }
-  saveLocalStorage(obj: object) {
-    localStorage.setItem('LOCAL', JSON.stringify(obj));
+  saveLocalStorage(obj: object, name: string) {
+    localStorage.setItem(name, JSON.stringify(obj));
   }
 
-  getLocalStorage() {
-    return JSON.parse(localStorage.getItem('LOCAL'));
+  getLocalStorage(name: string) {
+    return JSON.parse(localStorage.getItem(name));
   }
 
-  saveSessionStorage(obj: object) {
-    sessionStorage.setItem('SESSION', JSON.stringify(obj));
+  saveSessionStorage(obj: object, name: string) {
+    sessionStorage.setItem(name, JSON.stringify(obj));
   }
 
-  getSessionStorage() {
-    return JSON.parse(sessionStorage.getItem('SESSION'));
+  getSessionStorage(name: string) {
+    return JSON.parse(sessionStorage.getItem(name));
   }
 }
