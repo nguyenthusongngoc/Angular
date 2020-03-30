@@ -1,0 +1,42 @@
+<div class="container">
+  <ul>
+    <div class="col-4" *ngFor="let content of contentList">
+      <li>
+        <h4>
+          {{ content.title }}
+        </h4>
+        <p>
+          {{ content.content | editContent : 30 }}
+        </p>
+      </li>
+    </div>
+  </ul>
+  <form class="form-group">
+    <div class="form-list">
+      <div class="form-item">
+        <Label class="input-title">Input Title: </Label>
+        <input class="form-control" type="text" [(ngModel)]="inputcontent" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-item">
+        <label for="" class="input-title">Input Decription: </label>
+        <input type="text" class="form-control" [(ngModel)]="inputDecription" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="btn-list">
+      <button class="btn btn-primary" (click)="setLocal(inputcontent, inputDecription)">Save Local</button>
+      <button class="btn btn-dark" (click)="getLocal()">Get Local</button>
+      <button class="btn btn-warning" (click)="setSession(inputcontent, inputDecription)">Save Session</button>
+      <button class="btn" (click)="getSession()">Get Session</button>
+    </div>
+  </form>
+  <div class="result">
+    <div>
+      <h4>GetLocal: </h4>
+      <p>{{ resultLocal | json}}</p>
+    </div>
+    <div>
+      <h4>GetSession: </h4>
+      <p>{{ resultSession | json}}</p>
+    </div>
+  </div>
+</div>
