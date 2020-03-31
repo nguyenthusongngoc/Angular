@@ -1,0 +1,51 @@
+<form #templateForm="ngForm" (ngSubmit)="submit(templateForm)">
+  <div class="form-group">
+    <label for="inputName">Full name</label>
+    <input type="text" name="inputName" class="form-control" id="inputName"  #resultName="ngModel"
+      [(ngModel)]="name" required minlength="10">
+    <p *ngIf="resultName.invalid && (resultName.dirty || resultName.touched)">This field was inValid</p>
+  </div>
+
+  <div class="form-group">
+    <label for="inputEmail4">Email</label>
+    <input type="email" name="inputEmail4" class="form-control" id="inputEmail4" 
+      #resultMail="ngModel" [(ngModel)]="mail" required>
+    <p *ngIf="resultMail.invalid && (resultMail.dirty || resultMail.touched)">This field was inValid</p>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputPassword">Password</label>
+      <input type="password" name="inputPassword" class="form-control" id="inputPassword" 
+        #resultPass="ngModel" [(ngModel)]="pass" required>
+      <p *ngIf="resultPass.invalid && (resultPass.dirty || resultPass.touched)">This field was inValid</p>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputRePassword">Comfirm Password</label>
+      <input type="password" name="inputRePassword" class="form-control" id="inputRePassword"
+        #resultRePass="ngModel" [(ngModel)]="rePass" required>
+      <p *ngIf="resultRePass.invalid && (resultRePass.dirty || resultRePass.touched)">This field was inValid</p>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Address</label>
+    <div class="form-group col-md-4">
+      <input type="text" name="inputStreets" class="form-control" id="inputStreets" #resultStreet="ngModel"
+        placeholder="Street" [(ngModel)]="street" required>
+      <p *ngIf="resultStreet.invalid && (resultStreet.dirty || resultStreet.touched)">This field was inValid</p>
+    </div>
+    <div class="form-group col-md-4">
+      <input type="text" name="inputCity" class="form-control" id="inputCity" #resultCity="ngModel" placeholder="City" [(ngModel)]="city"
+        required>
+      <p *ngIf="resultCity.invalid && (resultCity.dirty || resultCity.touched)">This field was inValid</p>
+    </div>
+    <div class="form-group col-md-4">
+      <input type="text" name="inputCountry" class="form-control" id="inputCountry" #resultCountry="ngModel"
+        placeholder="Country" [(ngModel)]="country" required>
+      <p *ngIf="resultCountry.invalid && (resultCountry.dirty || resultCountry.touched)">This field was inValid</p>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" [disabled]="templateForm.invalid">Sign in</button>
+</form>
