@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  selector: 'app-template',
+  templateUrl: './template.component.html',
+  styleUrls: ['./template.component.scss']
 })
-export class FormComponent implements OnInit {
+export class TemplateComponent implements OnInit {
+
   name: string;
   mail: string;
   pass: string;
@@ -22,4 +22,5 @@ export class FormComponent implements OnInit {
   submit(form: NgForm) {
     console.log(form.value)
   }
+
 }
