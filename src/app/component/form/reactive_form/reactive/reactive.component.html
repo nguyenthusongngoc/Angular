@@ -3,25 +3,26 @@
     <div class="form-group">
       <label for="inputName">Full name</label>
       <input type="text" name="inputName" class="form-control" formControlName="fullname">
-      <p *ngIf=""> Invalid</p>
+      <p *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">This field was inValid</p>
     </div>
 
     <div class="form-group">
       <label for="email">Email</label>
       <input type="email" name="email" class="form-control" formControlName="email">
-
+      <p *ngIf="email.invalid && (email.dirty || email.touched)">This field was inValid</p>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="confirmPass">Password</label>
         <input type="password" name="confirmPass" class="form-control" formControlName="password">
-
+        <p *ngIf="password.invalid && (password.dirty || password.touched)">This field was inValid</p>
       </div>
       <div class="form-group col-md-6">
         <label for="confirmPass">Comfirm Password</label>
         <input type="password" name="confirmPass" class="form-control" formControlName="confirmPass">
-
+        <p *ngIf="confirmPass.invalid && (confirmPass.dirty || confirmPass.touched)">This field was inValid</p>
+        <p *ngIf="register.errors && (confirmPass.dirty || confirmPass.touched)">This field was inValid Pass</p>
       </div>
     </div>
 
@@ -37,6 +38,6 @@
       </div>
     </div>
 
-    <button class="btn btn-primary" [disabled]="register.invalid">Sign in</button>
+    <button class="btn btn-primary">Sign in</button>
   </div>
 </form>
